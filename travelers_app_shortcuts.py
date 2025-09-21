@@ -45,7 +45,7 @@ KOREAN_APPS = {
                 name="Korail Talk",
                 korean_name="코레일톡",
                 description="Train booking and ticket reservation",
-                ios_url="https://apps.apple.com/kr/app/korail-talk/id1064853845",
+                ios_url="https://apps.apple.com/kr/app/%EC%BD%94%EB%A0%88%EC%9D%BC%ED%86%A1/id1000558562",
                 android_url="https://play.google.com/store/apps/details?id=com.korail.talk",
                 icon="🚄",
                 keywords=["train", "railway", "ticket", "booking", "reservation", "ktx", "korail"]
@@ -87,7 +87,7 @@ KOREAN_APPS = {
                 name="Coupang Eats",
                 korean_name="쿠팡이츠",
                 description="Fast delivery by Coupang",
-                ios_url="https://apps.apple.com/kr/app/coupang-eats-delivery/id1489897288",
+                ios_url="https://apps.apple.com/kr/app/%EC%BF%A0%ED%8C%A1%EC%9D%B4%EC%B8%A0-%EC%99%80%EC%9A%B0%ED%9A%8C%EC%9B%90-%EB%AC%B4%EB%A3%8C%EB%B0%B0%EB%8B%AC/id1445504255",
                 android_url="https://play.google.com/store/apps/details?id=com.coupang.mobile.eats",
                 icon="🍜",
                 keywords=["delivery", "food", "fast", "order", "coupang", "meal", "quick"]
@@ -102,7 +102,7 @@ KOREAN_APPS = {
                 name="Visit Korea",
                 korean_name="비지트코리아",
                 description="Official Korea tourism information app",
-                ios_url="https://apps.apple.com/kr/app/visit-korea/id1453991828",
+                ios_url="https://apps.apple.com/kr/app/visitkorea/id417340885",
                 android_url="https://play.google.com/store/apps/details?id=com.visitkorea.eng",
                 icon="🇰🇷",
                 keywords=["tourism", "tourist", "attraction", "visit", "sightseeing", "korea", "travel"]
@@ -111,7 +111,7 @@ KOREAN_APPS = {
                 name="Visit Seoul",
                 korean_name="비지트서울",
                 description="Official Seoul city tourism guide",
-                ios_url="https://apps.apple.com/kr/app/visit-seoul/id1018639300",
+                ios_url="https://apps.apple.com/kr/app/visit-seoul-%EB%B9%84%EC%A7%93%EC%84%9C%EC%9A%B8/id360156429",
                 android_url="https://play.google.com/store/apps/details?id=com.sto.android.client.itourseoul",
                 icon="🏙️",
                 keywords=["seoul", "tourism", "tourist", "attraction", "city", "guide", "sightseeing"]
