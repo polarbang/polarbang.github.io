@@ -157,7 +157,7 @@ KOREAN_APPS = {
 def index():
     return render_template("index.jinja2", categories=KOREAN_APPS)
 
-@app.route('/download/<category_id>/<int:app_index>/<platform>')
+@app.route('/download/<category_id>/<int:app_index>/<platform>/')
 def download_app(category_id, app_index, platform):
     try:
         category = KOREAN_APPS[category_id]
