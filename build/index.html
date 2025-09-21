@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essential Korean Apps Guide - For Foreign Tourists</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #87CEEB 0%, #B0E0E6 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .search-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .search-btn:hover {
+            background: white;
+            color: #87CEEB;
+        }
+        
+        .categories {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        .category {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .category:hover {
+            transform: translateY(-5px);
+        }
+        
+        .category-header {
+            text-align: center;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            cursor: pointer;
+        }
+        
+        .category-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .category-desc {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(45deg, #87CEEB, #ADD8E6);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            font-size: 1.4rem;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 15px rgba(135, 206, 235, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .toggle-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.6s ease;
+        }
+        
+        .toggle-btn:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .toggle-btn:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(135, 206, 235, 0.6);
+        }
+        
+        .toggle-btn:active {
+            transform: translateY(-1px) scale(1.05);
+        }
+        
+        .toggle-icon {
+            position: relative;
+            z-index: 2;
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .toggle-icon.rotated {
+            transform: rotate(180deg) scale(1.1);
+        }
+        
+        .toggle-icon svg {
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        .apps {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .app-card {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+        
+        .app-card:hover {
+            background: #e9ecef;
+            transform: scale(1.02);
+        }
+        
+        .app-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+        
+        .app-info {
+            flex: 1;
+        }
+        
+        .app-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        
+        .app-description {
+            font-size: 0.85rem;
+            color: #888;
+        }
+        
+        .download-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .download-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        
+        .ios-btn {
+            background: #007AFF;
+        }
+        
+        .ios-btn:hover {
+            background: #0056CC;
+        }
+        
+        .android-btn {
+            background: #34A853;
+        }
+        
+        .android-btn:hover {
+            background: #2E7D32;
+        }
+        
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .search-modal {
+            max-height: 70vh;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 25px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .modal-header h3 {
+            color: #333;
+            margin: 0;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #666;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+        }
+        
+        .close-btn:hover {
+            color: #333;
+        }
+        
+        .modal-body {
+            padding: 25px;
+            overflow-y: auto;
+            max-height: 50vh;
+        }
+        
+        #searchInput {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            outline: none;
+        }
+        
+        #searchInput:focus {
+            border-color: #87CEEB;
+        }
+        
+        .search-result-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+        
+        .search-result-item:hover {
+            background: #e9ecef;
+            transform: scale(1.02);
+        }
+        
+        .no-results {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 20px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 1.9rem;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Korea App Navigator for International Travelers</h1>
+            <p>KANIT be of any help?</p>
+            <button class="search-btn" onclick="openSearchModal()">🔍 Search Apps</button>
+        </div>
+        
+        <div class="categories">
+            
+            <div class="category">
+                <div class="category-header">
+                    <h2 class="category-title">Transportation & Maps 🚗</h2>
+                    <p class="category-desc">Taxi, Train, Subway, Navigation</p>
+                </div>
+                
+                <div class="apps" id="apps-transportation_maps" style="display: none;">
+                    
+                    <div class="app-card">
+                        <div class="app-icon">🚕</div>
+                        <div class="app-info">
+                            <div class="app-name">Kakao T</div>
+                            <div class="app-description">Korea's Uber! Taxi calling app</div>
+                        </div>
+                        <div class="download-buttons">
+                            <a target="_blank", href="/download/transportation_maps/0/ios" class="download-btn ios-btn">
+                                iOS
+                            </a>
+                            <a target="_blank", href="/download/transportation_maps/0/android" class="download-btn android-btn">
+                                Android
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="app-card">
+                        <div class="app-icon">🗺️</div>
+                        <div class="app-info">
+                            <div class="app-name">Naver Map</div>
+                            <div class="app-description">Korea's best map app</div>
+                        </div>
+                        <div class="download-buttons">
+                            <a target="_blank", href="/download/transportation_maps/1/ios" class="download-btn ios-btn">
+                                iOS
+                            </a>
+                            <a target="_blank", href="/download/transportation_maps/1/android" class="download-btn android-btn">
+                                Android
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="app-card">
+                        <div class="app-icon">🚄</div>
+                        <div class="app-info">
+                            <div class="app-name">Korail Talk</div>
+                            <div class="app-description">Train booking and ticket reservation</div>
+                        </div>
+                        <div class="download-buttons">
+                            <a target="_blank", href="/download/transportation_maps/2/ios" class="download-btn ios-btn">
+                                iOS
+                            </a>
+                            <a target="_blank", href="/download/transportation_maps/2/android" class="download-btn android-btn">
+                                Android
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="app-card">
+                        <div class="app-icon">🚇</div>
+                        <div class="app-info">
+                            <div class="app-name">Subway Korea</div>
+                            <div class="app-description">Seoul subway map</div>
+                        </div>
+                        <div class="download-buttons">
+                            <a target="_blank", href="/download/transportation_maps/3/ios" class="download-btn ios-btn">
+                                iOS
+                            </a>
+                            <a target="_blank", href="/download/transportation_maps/3/android" class="download-btn android-btn">
+                                Android
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <button class="toggle-btn" onclick="toggleCategory('transportation_maps')" aria-label="Toggle category">
+                    <div class="toggle-icon">
+                        <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L10 8L18 2" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            
+            <div class="category">
+                <div class="category-header">
+                    <h2 class="category-title">Dining & Delivery 🍽️</h2>
+                    <p class="category-desc">Restaurant reservations and food delivery</p>
+                </div>
+                
+                <div class="apps" id="apps-dining" style="display: none;">
+                    
+                    <div class="app-card">
+                        <div class="app-icon">🍽️</div>
+                        <div class="app-info">
+                            <div class="app-name">Catchtable</div>
+                            <div class="app-description">Restaurant reservation and booking</div>
+                        </div>
+                        <div class="download-buttons">
+                            <a target="_blank", href="/download/dining/0/ios" class="download-btn ios-btn">
+                                iOS
+                            </a>
+                            <a target="_blank", href="/download/dining/0/android" class="download-btn android-btn">
+                                Android
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="app-card">
+                        <div class="app-icon">🍕</div>
+                        <div class="app-info">
+                            <div class="app-name">Baedal Minjok</div>
+                            <div class="app-description">Korea's #1 food delivery app</div>
+                        </div>
+                        <div class="download-buttons">
+                            <a target="_blank", href="/download/dining/1/ios" class="download-btn ios-btn">
+                                iOS
+                            </a>
+                            <a target="_blank", href="/download/dining/1/android" class="download-btn android-btn">
+                                Android
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="app-card">
+                        <div class="app-icon">🍜</div>
+                        <div class="app-info">
+                            <div class="app-name">Coupang Eats</div>
+                            <div class="app-description">Fast delivery by Coupang</div>
+                        </div>
+                        <div class="download-buttons">
+                            <a target="_blank", href="/download/dining/2/ios" class="download-btn ios-btn">
+                                iOS
+                            </a>
+                            <a target="_blank", href="/download/dining/2/android" class="download-btn android-btn">
+                                Android
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <button class="toggle-btn" onclick="toggleCategory('dining')" aria-label="Toggle category">
+                    <div class="toggle-icon">
+                        <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L10 8L18 2" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            
+            <div class="category">
+                <div class="category-header">
+                    <h2 class="category-title">Tourist Attractions 🏛️</h2>
+                    <p class="category-desc">Discover attractions and tourist information</p>
+                </div>
+                
+                <div class="apps" id="apps-tourist_attractions" style="display: none;">
+                    
+                    <div class="app-card">
+                        <div class="app-icon">🇰🇷</div>
+                        <div class="app-info">
+                            <div class="app-name">Visit Korea</div>
+                            <div class="app-description">Official Korea tourism information app</div>
+                        </div>
+                        <div class="download-buttons">
+                            <a target="_blank", href="/download/tourist_attractions/0/ios" class="download-btn ios-btn">
+                                iOS
+                            </a>
+                            <a target="_blank", href="/download/tourist_attractions/0/android" class="download-btn android-btn">
+                                Android
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="app-card">
+                        <div class="app-icon">🏙️</div>
+                        <div class="app-info">
+                            <div class="app-name">Visit Seoul</div>
+                            <div class="app-description">Official Seoul city tourism guide</div>
+                        </div>
+                        <div class="download-buttons">
+                            <a target="_blank", href="/download/tourist_attractions/1/ios" class="download-btn ios-btn">
+                                iOS
+                            </a>
+                            <a target="_blank", href="/download/tourist_attractions/1/android" class="download-btn android-btn">
+                                Android
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <button class="toggle-btn" onclick="toggleCategory('tourist_attractions')" aria-label="Toggle category">
+                    <div class="toggle-icon">
+                        <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L10 8L18 2" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            
+            <div class="category">
+                <div class="category-header">
+                    <h2 class="category-title">Travel Utility 🌐</h2>
+                    <p class="category-desc">Translation, messaging and currency tools for tourists</p>
+                </div>
+                
+                <div class="apps" id="apps-utility" style="display: none;">
+                    
+                    <div class="app-card">
+                        <div class="app-icon">💬</div>
+                        <div class="app-info">
+                            <div class="app-name">KakaoTalk</div>
+                            <div class="app-description">Korea's national messenger, essential app!</div>
+                        </div>
+                        <div class="download-buttons">
+                            <a target="_blank", href="/download/utility/0/ios" class="download-btn ios-btn">
+                                iOS
+                            </a>
+                            <a target="_blank", href="/download/utility/0/android" class="download-btn android-btn">
+                                Android
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="app-card">
+                        <div class="app-icon">🌐</div>
+                        <div class="app-info">
+                            <div class="app-name">Papago</div>
+                            <div class="app-description">Naver's AI translator, best for Korean</div>
+                        </div>
+                        <div class="download-buttons">
+                            <a target="_blank", href="/download/utility/1/ios" class="download-btn ios-btn">
+                                iOS
+                            </a>
+                            <a target="_blank", href="/download/utility/1/android" class="download-btn android-btn">
+                                Android
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="app-card">
+                        <div class="app-icon">💱</div>
+                        <div class="app-info">
+                            <div class="app-name">Currency</div>
+                            <div class="app-description">Real-time currency converter</div>
+                        </div>
+                        <div class="download-buttons">
+                            <a target="_blank", href="/download/utility/2/ios" class="download-btn ios-btn">
+                                iOS
+                            </a>
+                            <a target="_blank", href="/download/utility/2/android" class="download-btn android-btn">
+                                Android
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <button class="toggle-btn" onclick="toggleCategory('utility')" aria-label="Toggle category">
+                    <div class="toggle-icon">
+                        <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2L10 8L18 2" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+            
+        </div>
+        
+        <!-- Search Modal -->
+        <div id="searchModal" class="modal" style="display: none;">
+            <div class="modal-content search-modal">
+                <div class="modal-header">
+                    <h3>Search Apps</h3>
+                    <button class="close-btn" onclick="closeSearchModal()">×</button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="searchInput" placeholder="Search for apps... (e.g., taxi, food, translate)" oninput="searchApps()">
+                    <div id="searchResults"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Made for tourists visiting South Korea 🇰🇷</p>
+            <p>Your essential app guide for Korea</p>
+        </div>
+    </div>
+
+    <script>
+        // 검색 모달 열기/닫기
+        function openSearchModal() {
+            document.getElementById('searchModal').style.display = 'flex';
+            document.getElementById('searchInput').focus();
+        }
+        
+        function closeSearchModal() {
+            document.getElementById('searchModal').style.display = 'none';
+            document.getElementById('searchInput').value = '';
+            document.getElementById('searchResults').innerHTML = '';
+        }
+        
+        // 모달 바깥 클릭 시 닫기
+        document.addEventListener('click', function(e) {
+            const modal = document.getElementById('searchModal');
+            if (e.target === modal) {
+                closeSearchModal();
+            }
+        });
+        
+        // 앱 검색 함수
+        function searchApps() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            const resultsContainer = document.getElementById('searchResults');
+            
+            if (!searchTerm) {
+                resultsContainer.innerHTML = '';
+                return;
+            }
+            
+            const apps = {"dining": {"apps": [{"android_url": "market://details?id=kr.co.catchtable.global.catchtable_global", "description": "Restaurant reservation and booking", "icon": "\ud83c\udf7d\ufe0f", "ios_url": "https://apps.apple.com/kr/app/catch-table-book-restaurants/id1639046576", "keywords": ["restaurant", "reservation", "booking", "table", "dining", "eat", "food"], "korean_name": "\uce90\uce58\ud14c\uc774\ube14", "name": "Catchtable"}, {"android_url": "market://details?id=com.sampleapp", "description": "Korea\u0027s #1 food delivery app", "icon": "\ud83c\udf55", "ios_url": "https://apps.apple.com/kr/app/baedal-minjog/id378084485", "keywords": ["delivery", "food", "order", "restaurant", "meal", "korean", "baemin"], "korean_name": "\ubc30\ub2ec\uc758\ubbfc\uc871", "name": "Baedal Minjok"}, {"android_url": "market://details?id=com.coupang.mobile.eats", "description": "Fast delivery by Coupang", "icon": "\ud83c\udf5c", "ios_url": "https://apps.apple.com/kr/app/coupang-eats-delivery/id1489897288", "keywords": ["delivery", "food", "fast", "order", "coupang", "meal", "quick"], "korean_name": "\ucfe0\ud321\uc774\uce20", "name": "Coupang Eats"}], "category_desc": "Restaurant reservations and food delivery", "category_name": "Dining \u0026 Delivery \ud83c\udf7d\ufe0f"}, "tourist_attractions": {"apps": [{"android_url": "market://details?id=kr.co.kto.visitkorea", "description": "Official Korea tourism information app", "icon": "\ud83c\uddf0\ud83c\uddf7", "ios_url": "https://apps.apple.com/kr/app/visit-korea/id1453991828", "keywords": ["tourism", "tourist", "attraction", "visit", "sightseeing", "korea", "travel"], "korean_name": "\ube44\uc9c0\ud2b8\ucf54\ub9ac\uc544", "name": "Visit Korea"}, {"android_url": "market://details?id=com.seoul.visitseoul", "description": "Official Seoul city tourism guide", "icon": "\ud83c\udfd9\ufe0f", "ios_url": "https://apps.apple.com/kr/app/visit-seoul/id1018639300", "keywords": ["seoul", "tourism", "tourist", "attraction", "city", "guide", "sightseeing"], "korean_name": "\ube44\uc9c0\ud2b8\uc11c\uc6b8", "name": "Visit Seoul"}], "category_desc": "Discover attractions and tourist information", "category_name": "Tourist Attractions \ud83c\udfdb\ufe0f"}, "transportation_maps": {"apps": [{"android_url": "market://details?id=com.kakao.taxi", "description": "Korea\u0027s Uber! Taxi calling app", "icon": "\ud83d\ude95", "ios_url": "https://apps.apple.com/kr/app/kakaot/id981110422", "keywords": ["taxi", "cab", "ride", "uber", "transport", "car", "driver"], "korean_name": "\uce74\uce74\uc624 T", "name": "Kakao T"}, {"android_url": "market://details?id=com.nhn.android.nmap", "description": "Korea\u0027s best map app", "icon": "\ud83d\uddfa\ufe0f", "ios_url": "https://apps.apple.com/kr/app/naver-map-navigation/id311867728", "keywords": ["map", "navigation", "direction", "location", "gps", "route", "address"], "korean_name": "\ub124\uc774\ubc84\uc9c0\ub3c4", "name": "Naver Map"}, {"android_url": "market://details?id=kr.co.korail.mobile.sealog", "description": "Train booking and ticket reservation", "icon": "\ud83d\ude84", "ios_url": "https://apps.apple.com/kr/app/korail-talk/id1064853845", "keywords": ["train", "railway", "ticket", "booking", "reservation", "ktx", "korail"], "korean_name": "\ucf54\ub808\uc77c\ud1a1", "name": "Korail Talk"}, {"android_url": "market://details?id=kr.co.citymapper.seoul", "description": "Seoul subway map", "icon": "\ud83d\ude87", "ios_url": "https://apps.apple.com/app/id325924444", "keywords": ["subway", "metro", "underground", "train", "seoul", "station", "line"], "korean_name": "\uc9c0\ud558\ucca0\ub9f5", "name": "Subway Korea"}], "category_desc": "Taxi, Train, Subway, Navigation", "category_name": "Transportation \u0026 Maps \ud83d\ude97"}, "utility": {"apps": [{"android_url": "market://details?id=com.kakao.talk", "description": "Korea\u0027s national messenger, essential app!", "icon": "\ud83d\udcac", "ios_url": "https://apps.apple.com/kr/app/kakaotalk/id362057947", "keywords": ["message", "messenger", "chat", "talk", "communication", "kakao", "text"], "korean_name": "\uce74\uce74\uc624\ud1a1", "name": "KakaoTalk"}, {"android_url": "market://details?id=com.naver.labs.translator", "description": "Naver\u0027s AI translator, best for Korean", "icon": "\ud83c\udf10", "ios_url": "https://apps.apple.com/kr/app/papago-ai-translator/id1147874819", "keywords": ["translate", "translator", "language", "korean", "english", "communication", "ai"], "korean_name": "\ud30c\ud30c\uace0", "name": "Papago"}, {"android_url": "market://details?id=com.xe.currency", "description": "Real-time currency converter", "icon": "\ud83d\udcb1", "ios_url": "https://apps.apple.com/app/id284220417", "keywords": ["currency", "exchange", "money", "rate", "convert", "won", "dollar"], "korean_name": "\ud658\uc728\uacc4\uc0b0\uae30", "name": "Currency"}], "category_desc": "Translation, messaging and currency tools for tourists", "category_name": "Travel Utility \ud83c\udf10"}};
+            let results = [];
+            
+            // 모든 앱에서 검색
+            Object.keys(apps).forEach(categoryId => {
+                apps[categoryId].apps.forEach((app, index) => {
+                    const matchScore = calculateMatchScore(app, searchTerm);
+                    if (matchScore > 0) {
+                        results.push({
+                            app: app,
+                            categoryId: categoryId,
+                            appIndex: index,
+                            score: matchScore
+                        });
+                    }
+                });
+            });
+            
+            // 점수 순으로 정렬
+            results.sort((a, b) => b.score - a.score);
+            
+            // 결과 표시
+            displaySearchResults(results);
+        }
+        
+        // 매칭 점수 계산
+        function calculateMatchScore(app, searchTerm) {
+            let score = 0;
+            
+            // 앱 이름 매칭 (높은 점수)
+            if (app.name.toLowerCase().includes(searchTerm)) score += 10;
+            
+            // 설명 매칭 (중간 점수)
+            if (app.description.toLowerCase().includes(searchTerm)) score += 5;
+            
+            // 키워드 매칭 (기본 점수)
+            if (app.keywords) {
+                app.keywords.forEach(keyword => {
+                    if (keyword.toLowerCase().includes(searchTerm) || searchTerm.includes(keyword.toLowerCase())) {
+                        score += 3;
+                    }
+                });
+            }
+            
+            return score;
+        }
+        
+        // 검색 결과 표시
+        function displaySearchResults(results) {
+            const resultsContainer = document.getElementById('searchResults');
+            
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<div class="no-results">No apps found. Try different keywords!</div>';
+                return;
+            }
+            
+            let html = '';
+            results.forEach(result => {
+                const app = result.app;
+                html += `
+                    <div class="search-result-item" onclick="selectSearchResult('${result.categoryId}', ${result.appIndex})">
+                        <div class="app-icon" style="font-size: 1.5rem; margin-right: 15px;">${app.icon}</div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600; color: #333;">${app.name}</div>
+                            <div style="font-size: 0.85rem; color: #888;">${app.description}</div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 5px;">
+                            <a target="_blank", href="/download/${result.categoryId}/${result.appIndex}/ios" class="download-btn ios-btn" style="padding: 5px 10px; font-size: 0.7rem;" onclick="event.stopPropagation()">iOS</a>
+                            <a target="_blank", href="/download/${result.categoryId}/${result.appIndex}/android" class="download-btn android-btn" style="padding: 5px 10px; font-size: 0.7rem;" onclick="event.stopPropagation()">Android</a>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            resultsContainer.innerHTML = html;
+        }
+        
+        // 검색 결과 선택 시 해당 카테고리 열기
+        function selectSearchResult(categoryId, appIndex) {
+            closeSearchModal();
+            toggleCategory(categoryId);
+            
+            // 해당 앱으로 스크롤
+            setTimeout(() => {
+                const appCard = document.querySelectorAll(`#apps-${categoryId} .app-card`)[appIndex];
+                if (appCard) {
+                    appCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    appCard.style.background = '#e3f2fd';
+                    setTimeout(() => { appCard.style.background = '#f8f9fa'; }, 2000);
+                }
+            }, 300);
+        }
+        
+        // ESC 키로 모달 닫기
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeSearchModal();
+            }
+        });
+
+        // 카테고리 토글 함수
+        function toggleCategory(categoryId) {
+            const appsContainer = document.getElementById('apps-' + categoryId);
+            const toggleIcon = document.querySelector(`[onclick="toggleCategory('${categoryId}')"] .toggle-icon`);
+            
+            // 다른 모든 카테고리 닫기
+            const allAppsContainers = document.querySelectorAll('[id^="apps-"]');
+            const allToggleIcons = document.querySelectorAll('.toggle-icon');
+            
+            allAppsContainers.forEach(container => {
+                if (container.id !== 'apps-' + categoryId) {
+                    container.style.display = 'none';
+                }
+            });
+            
+            allToggleIcons.forEach(icon => {
+                if (icon !== toggleIcon) {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            // 현재 카테고리 토글
+            if (appsContainer.style.display === 'none') {
+                appsContainer.style.display = 'flex';
+                toggleIcon.style.transform = 'rotate(180deg) scale(1.1)';
+            } else {
+                appsContainer.style.display = 'none';
+                toggleIcon.style.transform = 'rotate(0deg)';
+            }
+        }
+        
+        // 카테고리 헤더 클릭으로도 토글 가능
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryHeaders = document.querySelectorAll('.category-header');
+            categoryHeaders.forEach(header => {
+                header.addEventListener('click', function(e) {
+                    if (!e.target.closest('.toggle-btn')) {
+                        const categoryId = this.closest('.category').querySelector('[id^="apps-"]').id.replace('apps-', '');
+                        toggleCategory(categoryId);
+                    }
+                });
+            });
+        });
+
+        // 사용자 디바이스 감지
+        function detectPlatform() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/android/i.test(userAgent)) {
+                return 'android';
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return 'ios';
+            }
+            return 'android'; // 기본값
+        }
+
+        // 플랫폼별 버튼 하이라이트
+        document.addEventListener('DOMContentLoaded', function() {
+            const platform = detectPlatform();
+            const buttons = document.querySelectorAll('.download-btn');
+            
+            buttons.forEach(button => {
+                if (button.classList.contains(platform + '-btn')) {
+                    button.style.boxShadow = '0 0 10px rgba(0,0,0,0.3)';
+                    button.style.fontWeight = '700';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
