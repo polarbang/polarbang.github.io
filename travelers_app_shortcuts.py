@@ -187,7 +187,7 @@ def download_app(category_id, app_index, platform):
     except (KeyError, IndexError):
         return "App not found", 404
 
-@app.route('/install-guide')
+@app.route('/install-guide/')
 def install_guide():
     """Installation guide page"""
     guide_html = """
