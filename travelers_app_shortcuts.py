@@ -28,7 +28,7 @@ KOREAN_APPS = {
                 korean_name="카카오 T",
                 description="Korea's Uber! Taxi calling app",
                 ios_url="https://apps.apple.com/kr/app/kakaot/id981110422",
-                android_url="market://details?id=com.kakao.taxi",
+                android_url="https://play.google.com/store/apps/details?id=com.kakao.taxi",
                 icon="🚕",
                 keywords=["taxi", "cab", "ride", "uber", "transport", "car", "driver"]
             ),
@@ -37,7 +37,7 @@ KOREAN_APPS = {
                 korean_name="네이버지도",
                 description="Korea's best map app",
                 ios_url="https://apps.apple.com/kr/app/naver-map-navigation/id311867728",
-                android_url="market://details?id=com.nhn.android.nmap",
+                android_url="https://play.google.com/store/apps/details/NAVER_Map_Navigation?id=com.nhn.android.nmap",
                 icon="🗺️",
                 keywords=["map", "navigation", "direction", "location", "gps", "route", "address"]
             ),
@@ -46,7 +46,7 @@ KOREAN_APPS = {
                 korean_name="코레일톡",
                 description="Train booking and ticket reservation",
                 ios_url="https://apps.apple.com/kr/app/korail-talk/id1064853845",
-                android_url="market://details?id=kr.co.korail.mobile.sealog",
+                android_url="https://play.google.com/store/apps/details?id=com.korail.talk",
                 icon="🚄",
                 keywords=["train", "railway", "ticket", "booking", "reservation", "ktx", "korail"]
             ),
@@ -55,7 +55,7 @@ KOREAN_APPS = {
                 korean_name="지하철맵",
                 description="Seoul subway map",
                 ios_url="https://apps.apple.com/app/id325924444",
-                android_url="market://details?id=kr.co.citymapper.seoul",
+                android_url="https://play.google.com/store/apps/details?id=com.imagedrome.jihachul",
                 icon="🚇",
                 keywords=["subway", "metro", "underground", "train", "seoul", "station", "line"]
             )
@@ -70,7 +70,7 @@ KOREAN_APPS = {
                 korean_name="캐치테이블",
                 description="Restaurant reservation and booking",
                 ios_url="https://apps.apple.com/kr/app/catch-table-book-restaurants/id1639046576",
-                android_url="market://details?id=kr.co.catchtable.global.catchtable_global",
+                android_url="https://play.google.com/store/apps/details?id=kr.co.catchtable.global.catchtable_global",
                 icon="🍽️",
                 keywords=["restaurant", "reservation", "booking", "table", "dining", "eat", "food"]
             ),
@@ -79,7 +79,7 @@ KOREAN_APPS = {
                 korean_name="배달의민족",
                 description="Korea's #1 food delivery app",
                 ios_url="https://apps.apple.com/kr/app/baedal-minjog/id378084485",
-                android_url="market://details?id=com.sampleapp",
+                android_url="https://play.google.com/store/apps/details?id=com.sampleapp",
                 icon="🍕",
                 keywords=["delivery", "food", "order", "restaurant", "meal", "korean", "baemin"]
             ),
@@ -88,7 +88,7 @@ KOREAN_APPS = {
                 korean_name="쿠팡이츠",
                 description="Fast delivery by Coupang",
                 ios_url="https://apps.apple.com/kr/app/coupang-eats-delivery/id1489897288",
-                android_url="market://details?id=com.coupang.mobile.eats",
+                android_url="https://play.google.com/store/apps/details?id=com.coupang.mobile.eats",
                 icon="🍜",
                 keywords=["delivery", "food", "fast", "order", "coupang", "meal", "quick"]
             )
@@ -103,7 +103,7 @@ KOREAN_APPS = {
                 korean_name="비지트코리아",
                 description="Official Korea tourism information app",
                 ios_url="https://apps.apple.com/kr/app/visit-korea/id1453991828",
-                android_url="market://details?id=kr.co.kto.visitkorea",
+                android_url="https://play.google.com/store/apps/details?id=com.visitkorea.eng",
                 icon="🇰🇷",
                 keywords=["tourism", "tourist", "attraction", "visit", "sightseeing", "korea", "travel"]
             ),
@@ -112,7 +112,7 @@ KOREAN_APPS = {
                 korean_name="비지트서울",
                 description="Official Seoul city tourism guide",
                 ios_url="https://apps.apple.com/kr/app/visit-seoul/id1018639300",
-                android_url="market://details?id=com.seoul.visitseoul",
+                android_url="https://play.google.com/store/apps/details?id=com.sto.android.client.itourseoul",
                 icon="🏙️",
                 keywords=["seoul", "tourism", "tourist", "attraction", "city", "guide", "sightseeing"]
             )
@@ -127,7 +127,7 @@ KOREAN_APPS = {
                 korean_name="카카오톡",
                 description="Korea's national messenger, essential app!",
                 ios_url="https://apps.apple.com/kr/app/kakaotalk/id362057947",
-                android_url="market://details?id=com.kakao.talk",
+                android_url="https://play.google.com/store/apps/details?id=com.kakao.talk",
                 icon="💬",
                 keywords=["message", "messenger", "chat", "talk", "communication", "kakao", "text"]
             ),
@@ -136,7 +136,7 @@ KOREAN_APPS = {
                 korean_name="파파고",
                 description="Naver's AI translator, best for Korean",
                 ios_url="https://apps.apple.com/kr/app/papago-ai-translator/id1147874819",
-                android_url="market://details?id=com.naver.labs.translator",
+                android_url="https://play.google.com/store/apps/details?id=com.naver.labs.translator",
                 icon="🌐",
                 keywords=["translate", "translator", "language", "korean", "english", "communication", "ai"]
             ),
@@ -145,7 +145,7 @@ KOREAN_APPS = {
                 korean_name="환율계산기",
                 description="Real-time currency converter",
                 ios_url="https://apps.apple.com/app/id284220417",
-                android_url="market://details?id=com.xe.currency",
+                android_url="https://play.google.com/store/apps/details?id=com.currencyapp.currencyandroid",
                 icon="💱",
                 keywords=["currency", "exchange", "money", "rate", "convert", "won", "dollar"]
             )
