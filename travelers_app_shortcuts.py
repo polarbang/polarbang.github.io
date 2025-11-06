@@ -101,7 +101,7 @@ KOREAN_APPS = {
             App(
                 name="Visit Korea",
                 korean_name="비지트코리아",
-                description="Korea tourism information app",
+                description="Korea tourism information",
                 ios_url="https://apps.apple.com/kr/app/visitkorea/id417340885",
                 android_url="https://play.google.com/store/apps/details?id=com.visitkorea.eng",
                 icon="🇰🇷",
@@ -110,7 +110,7 @@ KOREAN_APPS = {
             App(
                 name="Visit Seoul",
                 korean_name="비지트서울",
-                description="Seoul city tourism guide",
+                description="Seoul city tourism information",
                 ios_url="https://apps.apple.com/kr/app/visit-seoul-%EB%B9%84%EC%A7%93%EC%84%9C%EC%9A%B8/id360156429",
                 android_url="https://play.google.com/store/apps/details?id=com.sto.android.client.itourseoul",
                 icon="🏙️",

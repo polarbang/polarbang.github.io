@@ -6,6 +6,7 @@ freezer = Freezer(app)
 app.config['FREEZER_DEFAULT_MIMETYPE'] = 'text/html'
 app.config['FREEZER_RELATIVE_URLS'] = True
 app.config['FREEZER_DESTINATION'] = 'docs'
+app.config['FREEZER_REMOVE_EXTRA_FILES'] = False
 
 @freezer.register_generator
 def download_app():
