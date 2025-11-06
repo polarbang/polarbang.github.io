@@ -44,7 +44,7 @@ KOREAN_APPS = {
             App(
                 name="Korail Talk",
                 korean_name="코레일톡",
-                description="Train booking and ticket reservation",
+                description="Train ticket reservation",
                 ios_url="https://apps.apple.com/kr/app/%EC%BD%94%EB%A0%88%EC%9D%BC%ED%86%A1/id1000558562",
                 android_url="https://play.google.com/store/apps/details?id=com.korail.talk",
                 icon="🚄",
@@ -68,7 +68,7 @@ KOREAN_APPS = {
             App(
                 name="Catchtable",
                 korean_name="캐치테이블",
-                description="Restaurant reservation and booking",
+                description="Restaurant reservation",
                 ios_url="https://apps.apple.com/kr/app/catch-table-book-restaurants/id1639046576",
                 android_url="https://play.google.com/store/apps/details?id=kr.co.catchtable.global.catchtable_global",
                 icon="🍽️",
@@ -86,7 +86,7 @@ KOREAN_APPS = {
             App(
                 name="Coupang Eats",
                 korean_name="쿠팡이츠",
-                description="Fast delivery by Coupang",
+                description="Food delivery by Coupang",
                 ios_url="https://apps.apple.com/kr/app/%EC%BF%A0%ED%8C%A1%EC%9D%B4%EC%B8%A0-%EC%99%80%EC%9A%B0%ED%9A%8C%EC%9B%90-%EB%AC%B4%EB%A3%8C%EB%B0%B0%EB%8B%AC/id1445504255",
                 android_url="https://play.google.com/store/apps/details?id=com.coupang.mobile.eats",
                 icon="🍜",
@@ -101,7 +101,7 @@ KOREAN_APPS = {
             App(
                 name="Visit Korea",
                 korean_name="비지트코리아",
-                description="Official Korea tourism information app",
+                description="Korea tourism information app",
                 ios_url="https://apps.apple.com/kr/app/visitkorea/id417340885",
                 android_url="https://play.google.com/store/apps/details?id=com.visitkorea.eng",
                 icon="🇰🇷",
@@ -110,7 +110,7 @@ KOREAN_APPS = {
             App(
                 name="Visit Seoul",
                 korean_name="비지트서울",
-                description="Official Seoul city tourism guide",
+                description="Seoul city tourism guide",
                 ios_url="https://apps.apple.com/kr/app/visit-seoul-%EB%B9%84%EC%A7%93%EC%84%9C%EC%9A%B8/id360156429",
                 android_url="https://play.google.com/store/apps/details?id=com.sto.android.client.itourseoul",
                 icon="🏙️",
@@ -125,7 +125,7 @@ KOREAN_APPS = {
              App(
                 name="KakaoTalk",
                 korean_name="카카오톡",
-                description="Korea's national messenger, essential app!",
+                description="Korea's national messenger",
                 ios_url="https://apps.apple.com/kr/app/kakaotalk/id362057947",
                 android_url="https://play.google.com/store/apps/details?id=com.kakao.talk",
                 icon="💬",
@@ -134,7 +134,7 @@ KOREAN_APPS = {
             App(
                 name="Papago",
                 korean_name="파파고",
-                description="Naver's AI translator, best for Korean",
+                description="AI translator, best for Korean",
                 ios_url="https://apps.apple.com/kr/app/papago-ai-translator/id1147874819",
                 android_url="https://play.google.com/store/apps/details?id=com.naver.labs.translator",
                 icon="🌐",
