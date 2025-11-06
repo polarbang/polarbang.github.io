@@ -104,7 +104,7 @@ KOREAN_APPS = {
                 description="Korea tourism information",
                 ios_url="https://apps.apple.com/kr/app/visitkorea/id417340885",
                 android_url="https://play.google.com/store/apps/details?id=com.visitkorea.eng",
-                icon="🇰🇷",
+                icon="🎎",
                 keywords=["tourism", "tourist", "attraction", "visit", "sightseeing", "korea", "travel"]
             ),
             App(
